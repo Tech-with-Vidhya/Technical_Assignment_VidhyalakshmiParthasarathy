@@ -1,6 +1,6 @@
 # Technical_Assignment_VidhyalakshmiParthasarathy
 
-# <font color='#0E1478'><center><u>**Identificaton of Data Quality Issues in the Parquet Files of the Scrape Appearances Dataset and the Competitor Appearances Dataset**</u></center></font>
+# <font color='#0E1478'><center><u>**Identificaton of Data Quality Issues in the Parquet Files of the Scrape Appearances and the Competitor Appearances Datasets**</u></center></font>
 
 ## <u>**INTRODUCTION**</u>
 
