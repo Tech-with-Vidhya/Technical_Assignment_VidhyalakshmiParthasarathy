@@ -25,8 +25,8 @@
 > ### 1. Includes 20 Parquet Files
 > ### 2. Includes 4 unique data attributes namely 'date', 'device', 'search_term' and 'scrape_count'
 > ### 3. Data Attributes - Data Types Details:
-    > * date: Date (YYYY-MM-DD)
-    > * device: String
+    > date: Date (YYYY-MM-DD)
+    > device: String
     > * search_term: String
     > * scrape_count: Int
 > ### 4. Data Attributes - Constraints Details:
