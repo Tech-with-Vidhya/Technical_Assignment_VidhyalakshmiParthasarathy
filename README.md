@@ -1,24 +1,24 @@
 # Technical_Assignment_VidhyalakshmiParthasarathy
 
-# <font color='#0E1478'><center><u>**Identificaton of Data Quality Issues in the Parquet Files of the Scrape Appearances and the Competitor Appearances Datasets**</u></center></font>
+# <u>**Identificaton of Data Quality Issues in the Parquet Files of the Scrape Appearances and the Competitor Appearances Datasets**</u>
 
 ## <u>**INTRODUCTION**</u>
 
 ### This project assignment task involves using Python as a programming language to look and analyse the data created in the AWS S3 Buckets, by performing data quality checks on the data and producing a summary report about the data quality findings.
 
-<br>
+
 
 ## <u>**DATASETS**</u>
 
 ### The project involves two datasets namely Scrape Appearances and Competitor Appearances stored in the AWS S3 Buckets. Each dataset includes multiple files in parquet format.
 
-<br>
+
 
 ### <u>**AWS S3 Bucket URIs are as follows:**</u>
 * ### <b>Scrape Appearances S3 Bucket</b> - 's3://adthena.data.qa.test/scrape_appearances'
 * ### <b>Competitor Appearances S3 Bucket</b> - 's3://adthena.data.qa.test/competitor_appearances'
 
-<br>
+
 
 ### **Below are the high-level stats about the two datasets.**
 ### <u><b>Scrape Appearances S3 Bucket:</b></u>
@@ -35,7 +35,7 @@
     > * search_term (non-NULL): maximum 400 characters long
     > * scrape_count (non-NULL): > 0
 
-<br>
+
 
 ### <u><b>Competitor Appearances S3 Bucket:</b></u>
 > ### 1. Includes 40 Parquet Files in 2-part file format
@@ -59,12 +59,12 @@
     > * pla_appearances (non-NULL): Minimum value: 0. Maximum value: unlimited
     > * ctr (optional - NULLable): Minimum value: 0. Maximum value: 1.0
 
-<br>
+
 
 ### The dataset and it's corresponding parquet files are accessed via the AWS API Credentials.
 ### <b>NOTE: </b>AWS API Credentials are not provided in this README.md file for the data protection and security reasons.
 
-<br>
+
 
 ### **Below are the domain related information of the data attributes in the two datasets.**
 > * search_term is a search that has been performed on Google search. For example: “car insurance”
@@ -74,13 +74,13 @@
 > * ctr: the probability that someone will click an advert
 > * sponsored, natural, and pla appearances are the number of times a type of advert has appeared for a given search term / device / domain on a date
 
-<br>
+
 
 ## <u>**PROJECT TASK OBJECTIVE**</u>
 
 ### In the provided datasets, there are some issues introduced that break the described constraints. The key objective of this project task is to identify the relevant tests that are able to find and uncover the issues introduced. The tests should also detect any other common issues that might be present in the datasets.
 
-<br>
+
 
 ## <u>**ENVIRONMENT SET-UP AND INSTALL INSTRUCTIONS**</u>
 
@@ -119,7 +119,7 @@
     
 ### Post successful completion of the above steps, we will have the environment ready for the project execution.
     
-<br>
+
 
 ## <u>**PROJECT FOLDER STRUCTURE**</u>
 
@@ -129,8 +129,9 @@
     > * #### "**README.md**" File - This includes all the steps and instructions to execute the project in the local machine
     > * #### "**modular_source_code**" Sub-Directory - This includes the parameters congiguration file and all the modular source code python files
     > * #### "**output**" Sub-Directory - This is the sub-directory where the output test summary reports for all the tests executed for each parquet input data file will be saved as individual "**.csv**" Data Quality Report files
+    > * #### "**data_quality_test_summary_report**" Sub-Directory - This is the sub-directory that includes the write-up related to the summarised test summary report on the data quality test outcomes in the PDF format, data quality tracker spreadsheet with all the supporting tables included in the pdf report and a copy of the Assignment PDF.
 
-<br>
+
 
 ## <u>**PROJECT IMPLEMENTATION APPROACH OVERVIEW**</u>
 
@@ -139,7 +140,7 @@
 > * #### Each Modular Source Code written in Python represents a data quality test scenario to be executed, to uncover and spot the quality issues introducted in the individual parquet input data files of the "scrape_appearances" and the "competitor_appearances" datasets.
 > * #### There is a re-usability capability of the modular source codes between "scrape_appearances" and the "competitor_appearances" datasets as applicable, as coding best practices.
 
-<br>
+
 
 ## <u>**PROJECT EXECUTION INSTRUCTIONS**</u>
 
@@ -148,7 +149,7 @@
 > #### 1. Copy the project's base directory and its sub-contents into the directory of the local machine.
 > #### 2. Please ensure that the Python software and the other Python packages set-up and installations as mentioned in the above "**ENVIRONMENT SET-UP AND INSTALL INSTRUCTIONS**" section are successfully installed and completed.
 > #### 3. Update the "**output_directory**" parameter in the "**config.py**" file within the project's "**modular_source_code**" sub-directory "**Technical_Assignment_VidhyalakshmiParthasarathy/modular_source_code/**", to reflect the local machine's full-qualified directory path where the output "**.csv**" summary report files must be saved.
-> #### 4. Open a new terminal window at the project's "**modular_source_code**" sub-directory "**Technical_Assignment_VidhyalakshmiParthasarathy/modular_source_code/**" and execute the "**main.py**" modular source code file using the command "**python3 main.py**".
+> #### 4. Open a new terminal window at the project's "**modular_source_code**" sub-directory "**Technical_Assignment_VidhyalakshmiParthasarathy/modular_source_code/**" and execute the "**main.py**" main source code file for the project execution using the command "**python3 main.py**".
 > #### 5. By executing the above Step-4, will start the project's execution and will write the output test summary reports as "**.csv**" files into the "**output_directory**" path as mentioned in the "**config.py**" file.
 > #### 6. Upon successful completion of the main program, the overall execution time in seconds will be displayed in the terminal window.
 > #### 7. We can proceed verifying the individual "**.csv**" Data Quality Test Summary Report files corresponding to each of the parquet input data file stored in the "**output**" sub-directory "**Technical_Assignment_VidhyalakshmiParthasarathy/output/**".
