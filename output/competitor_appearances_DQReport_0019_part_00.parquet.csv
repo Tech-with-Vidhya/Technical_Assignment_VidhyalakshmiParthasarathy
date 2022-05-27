@@ -1,0 +1,383 @@
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 1 - SCHEMA VALIDATIONS *****
+
+-----------------------------------------------------------------------------------------------------
+Parquet File S3 Path: 
+s3://adthena.data.qa.test/competitor_appearances/0019_part_00.parquet
+
+Parquet File Dataset Name: 
+competitor_appearances
+
+Parquet File - Data Attributes: 
+['search_term', 'date', 'device', 'domain', 'sponsored_appearances', 'natural_appearances', 'pla_appearances', 'ctr']
+
+Parquet File - Data Schema: 
+search_term: string
+date: date32[day]
+device: string
+domain: string
+sponsored_appearances: int32
+natural_appearances: int32
+pla_appearances: int32
+ctr: double
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 2 - DATAFRAME VALIDATIONS *****
+
+-----------------------------------------------------------------------------------------------------
+Parquet File - DataFrame: 
+                            search_term        date   device             domain  sponsored_appearances  natural_appearances  pla_appearances       ctr
+0        best travel point credit cards  2022-05-14  desktop         hilton.com                      1                    0                0  0.051516
+1           best treatment for bed bugs  2022-05-14  desktop          chewy.com                      0                    0                1  0.067054
+2             best vacuum and mop combo  2022-05-14  desktop   thehousewire.com                      0                    1                0       NaN
+3                  best women's handbag  2022-05-14  desktop      toryburch.com                      0                    0                1  0.052736
+4                  best womens slippers  2022-05-14  desktop           taos.org                      0                    0                4       NaN
+...                                 ...         ...      ...                ...                    ...                  ...              ...       ...
+4247877               apartments tucson  2022-05-13  desktop  apartmentlist.com                      3                    4                0  0.131210
+4247878              app for hair color  2022-05-13  desktop    play.google.com                      0                    2                0       NaN
+4247879      apple charger cord near me  2022-05-13  desktop          apple.com                      0                    2                0  0.131111
+4247880        apple usb type c adapter  2022-05-13  desktop        walmart.com                      0                    1                0  0.070341
+4247881            apple watches series  2022-05-13  desktop      wikipedia.org                      0                    4                0       NaN
+
+[4247882 rows x 8 columns]
+
+Total Number of Data Attributes in the Parquet DataFrame: 
+8
+
+Total Number of Data Instances in the Parquet DataFrame: 
+4247882
+
+Data Types of the Attributes in the Parquet DataFrame: 
+search_term               object
+date                      object
+device                    object
+domain                    object
+sponsored_appearances      int32
+natural_appearances        int32
+pla_appearances            int32
+ctr                      float64
+dtype: object
+
+Descriptive Statistics of the Parquet DataFrame: 
+       sponsored_appearances  natural_appearances  pla_appearances           ctr
+count           4.247882e+06         4.247882e+06     4.247882e+06  2.205076e+06
+mean            3.444131e-01         1.768673e+00     7.595267e-01  9.234486e-02
+std             1.114665e+00         3.353042e+00     3.766005e+00  5.201943e-02
+min             0.000000e+00         0.000000e+00     0.000000e+00  5.365680e-03
+25%             0.000000e+00         0.000000e+00     0.000000e+00  6.219571e-02
+50%             0.000000e+00         1.000000e+00     0.000000e+00  7.825963e-02
+75%             0.000000e+00         3.000000e+00     0.000000e+00  1.046019e-01
+max             3.300000e+01         2.400000e+02     5.780000e+02  7.984486e-01
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 3 - NULL (NaN and None) VALUES CHECKS AND VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+There are no Null Values found for the Attribute 'search_term' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'date':
+There are no Null Values found for the Attribute 'date' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'device':
+There are no Null Values found for the Attribute 'device' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'domain':
+There are no Null Values found for the Attribute 'domain' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'sponsored_appearances':
+There are no Null Values found for the Attribute 'sponsored_appearances' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'natural_appearances':
+There are no Null Values found for the Attribute 'natural_appearances' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'pla_appearances':
+There are no Null Values found for the Attribute 'pla_appearances' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'ctr':
+
+Total Number of Null Values: 2042806
+
+Below are the Filtered Data Instances of the 2042806 Null Values found for the Attribute 'ctr' in the Parquet File '0019_part_00.parquet'.
+
+                               search_term        date   device                domain  sponsored_appearances  natural_appearances  pla_appearances  ctr
+2                best vacuum and mop combo  2022-05-14  desktop      thehousewire.com                      0                    1                0  NaN
+4                     best womens slippers  2022-05-14  desktop              taos.org                      0                    0                4  NaN
+9                    big lots credit cards  2022-05-14  desktop    007creditagent.com                      0                    4                0  NaN
+15       bitbucket pipelines documentation  2022-05-14  desktop           spryker.com                      0                    2                0  NaN
+18                          black cherries  2022-05-14  desktop       tasteofhome.com                      0                    2                0  NaN
+...                                    ...         ...      ...                   ...                    ...                  ...              ...  ...
+4247874                      apartment pet  2022-05-13  desktop        apartments.com                      0                    1                0  NaN
+4247875                 apartments complex  2022-05-13  desktop  equityapartments.com                      0                    1                0  NaN
+4247876       apartments near me furnished  2022-05-13  desktop           hotpads.com                      0                    3                0  NaN
+4247878                 app for hair color  2022-05-13  desktop       play.google.com                      0                    2                0  NaN
+4247881               apple watches series  2022-05-13  desktop         wikipedia.org                      0                    4                0  NaN
+
+[2042806 rows x 8 columns]
+
+There are No Data Quality Issues as Null Values are Acceptable for the Attribute 'ctr'
+
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 4 - NON-ASCII CHARACTERS CHECKS AND VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+Total Number of Non-ASCII String Values: 1596
+
+Below are the Filtered Data Instances of the 1596 Non-ASCII String Values found for the Attribute 'search_term' in the Parquet File '0019_part_00.parquet'.
+
+                              search_term        date   device               domain  sponsored_appearances  natural_appearances  pla_appearances       ctr
+520                            goâgle.com  2022-05-14  desktop        safety.google                      0                    3                0       NaN
+1018     магазин рюкзаков xd design bobby  2022-05-14  desktop              ozon.ru                      0                    1                0       NaN
+1680                          fortress 豐澤  2022-05-14  desktop        wikipedia.org                      0                    1                0       NaN
+10177                 turbotax en español  2022-05-15   mobile     communitytax.com                      2                    0                0  0.102675
+10887                macramé plant hanger  2022-05-13   mobile  thesprucecrafts.com                      0                    2                0       NaN
+...                                   ...         ...      ...                  ...                    ...                  ...              ...       ...
+4234282               mortgage en español  2022-05-15  desktop  consumeraffairs.com                      1                    0                0  0.056862
+4236470                  conforama españa  2022-05-15  desktop       trustpilot.com                      0                    1                0       NaN
+4238715                               萝 莉  2022-05-13  desktop           google.com                      0                    3                0       NaN
+4242743                miếng dán plasters  2022-05-14  desktop         websosanh.vn                      0                    1                0       NaN
+4243428                             宝马 x3  2022-05-15  desktop           bmw.com.cn                      0                    2                0       NaN
+
+[1596 rows x 8 columns]
+
+Attribute 'device':
+There are no Non-ASCII String Values found for the Attribute 'device' in the Parquet File '0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Attribute 'domain':
+Total Number of Non-ASCII String Values: 11
+
+Below are the Filtered Data Instances of the 11 Non-ASCII String Values found for the Attribute 'domain' in the Parquet File '0019_part_00.parquet'.
+
+                            search_term        date   device               domain  sponsored_appearances  natural_appearances  pla_appearances       ctr
+36340                coolsculpting work  2022-05-14   mobile  rêveraesthetics.com                      3                    0                0  0.064577
+323246            best almond chocolate  2022-05-15   mobile         läderach.com                      0                    0                1  0.046759
+906464                     emoji domain  2022-05-13  desktop                i❤.ws                      0                    1                0       NaN
+1365961         my burberry by burberry  2022-05-13   mobile              духи.рф                      0                    1                0       NaN
+1727029        cool sculpting procedure  2022-05-15  desktop  rêveraesthetics.com                      1                    0                0  0.067479
+1757555                 swiss chocolate  2022-05-15   mobile         läderach.com                      0                    0                4  0.097307
+3006857                    casa inovare  2022-05-14  desktop       éconfiavel.com                      0                    1                0       NaN
+3033674  sports live streaming for free  2022-05-14   mobile     ștream2watch.com                      0                    2                0       NaN
+3274086              coolsculpting .com  2022-05-13   mobile  rêveraesthetics.com                      1                    0                0  0.082644
+3638932                         эротика  2022-05-14  desktop             порно.me                      0                    1                0       NaN
+3787683               free live streams  2022-05-14   mobile     ștream2watch.com                      0                    1                0       NaN
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 5 - UNIQUE PRIMARY KEY COMBINATION - DUPLICATE DATA CHECKS AND VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------
+There are no Duplicate Data Instances found for the Combination of the Unique Primary Key Data Attributes '['search_term', 'date', 'device', 'domain']' in the Parquet File'0019_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 6 - DATE ATTRIBUTE'S ACCEPTABLE DATE FORMAT - VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+The Date '2022-05-14' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0019_part_00.parquet'. 
+
+
+
+The Date '2022-05-15' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0019_part_00.parquet'. 
+
+
+
+The Date '2022-05-13' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0019_part_00.parquet'. 
+
+
+
+List of Dates with the Valid Format:
+['2022-05-14', '2022-05-15', '2022-05-13']
+
+List of Dates with the Invalid Format:
+[]
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 7 - UNIQUE VALUES SUPPORTED BY THE DEVICE DATA ATTRIBUTE - VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+There are no New UnSupported Device Values found for the Attribute 'device' in the Parquet File '0019_part_00.parquet'.
+
+
+Total Number of Existing Supported Device Values: 2
+
+
+List of Existing Supported Device Values: ['desktop', 'mobile']
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 8 - DEVIATIONS IN THE MAXIMUM ALLOWABLE CHARACTERS LENGTH OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+--------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+There are no Data Instances for the Data Attribute 'search_term' that Deviated the Maximum Allowable Characters Length of 400 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 8 - DEVIATIONS IN THE MAXIMUM ALLOWABLE CHARACTERS LENGTH OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+--------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'domain':
+There are no Data Instances for the Data Attribute 'domain' that Deviated the Maximum Allowable Characters Length of 100 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 10 - DEVIATIONS IN THE MINIMUM AND MAXIMUM ALLOWABLE COUNT OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'sponsored_appearances':
+Actual Minimum Value of the Data Attribute 'sponsored_appearances' in the Parquet File '0019_part_00.parquet:'
+0
+
+Actual Maximum Value of the Data Attribute 'sponsored_appearances' in the Parquet File '0019_part_00.parquet:'
+33
+
+There are no Data Instances for the Data Attribute 'sponsored_appearances' that Deviated the Minimum Allowable Count of 0 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+Total Number of Data Instances for the Data Attribute 'sponsored_appearances' that Deviated the Maximum Allowable Count of 26 in the Parquet File '0019_part_00.parquet':
+10
+
+Below are the sponsored_appearances Data Instances that Deviated the Maximum Allowable Count of 26 in the Parquet File '0019_part_00.parquet'. 
+
+                                          search_term        date   device                              domain  sponsored_appearances  natural_appearances  pla_appearances       ctr
+282247                stage 4 breast cancer treatment  2022-05-15   mobile  prescription-treatment-website.all                     27                    0                0  0.069983
+333019                             breast cancer mets  2022-05-15   mobile  prescription-treatment-website.all                     27                    0                0  0.071906
+369931                breast cancer hormone treatment  2022-05-13   mobile  prescription-treatment-website.all                     29                    0                0  0.087083
+548529                     advanced esophageal cancer  2022-05-14   mobile  prescription-treatment-website.all                     27                    0                0  0.099325
+794759                           psoriasis drugs list  2022-05-13   mobile  prescription-treatment-website.all                     27                    0                0  0.077105
+1365903              metastatic skin cancer treatment  2022-05-13   mobile  prescription-treatment-website.all                     27                    0                0  0.062751
+2072953                  psoriatic arthritis medicine  2022-05-14   mobile  prescription-treatment-website.all                     27                    0                0  0.097452
+2545754          christian marriage counseling online  2022-05-13  desktop                      betterhelp.com                     33                    0                0  0.051817
+2747308  treatment of metastatic renal cell carcinoma  2022-05-15   mobile  prescription-treatment-website.all                     27                    0                0  0.078145
+3245366               best prescription for psoriasis  2022-05-15   mobile  prescription-treatment-website.all                     29                    0                0  0.067426
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 10 - DEVIATIONS IN THE MINIMUM AND MAXIMUM ALLOWABLE COUNT OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'natural_appearances':
+Actual Minimum Value of the Data Attribute 'natural_appearances' in the Parquet File '0019_part_00.parquet:'
+0
+
+Actual Maximum Value of the Data Attribute 'natural_appearances' in the Parquet File '0019_part_00.parquet:'
+240
+
+There are no Data Instances for the Data Attribute 'natural_appearances' that Deviated the Minimum Allowable Count of 0 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+There are no Data Instances for the Data Attribute 'natural_appearances' that Deviated the Maximum Allowable Count of inf in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 10 - DEVIATIONS IN THE MINIMUM AND MAXIMUM ALLOWABLE COUNT OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'pla_appearances':
+Actual Minimum Value of the Data Attribute 'pla_appearances' in the Parquet File '0019_part_00.parquet:'
+0
+
+Actual Maximum Value of the Data Attribute 'pla_appearances' in the Parquet File '0019_part_00.parquet:'
+578
+
+There are no Data Instances for the Data Attribute 'pla_appearances' that Deviated the Minimum Allowable Count of 0 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+There are no Data Instances for the Data Attribute 'pla_appearances' that Deviated the Maximum Allowable Count of inf in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 10 - DEVIATIONS IN THE MINIMUM AND MAXIMUM ALLOWABLE COUNT OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'ctr':
+Actual Minimum Value of the Data Attribute 'ctr' in the Parquet File '0019_part_00.parquet:'
+0.0053656804375350475
+
+Actual Maximum Value of the Data Attribute 'ctr' in the Parquet File '0019_part_00.parquet:'
+0.7984486222
+
+There are no Data Instances for the Data Attribute 'ctr' that Deviated the Minimum Allowable Count of 0.0 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+There are no Data Instances for the Data Attribute 'ctr' that Deviated the Maximum Allowable Count of 1.0 in the Parquet File '0019_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, domain, sponsored_appearances, natural_appearances, pla_appearances, ctr]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+

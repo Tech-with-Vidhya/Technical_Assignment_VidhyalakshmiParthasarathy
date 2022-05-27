@@ -1,0 +1,204 @@
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 1 - SCHEMA VALIDATIONS *****
+
+-----------------------------------------------------------------------------------------------------
+Parquet File S3 Path: 
+s3://adthena.data.qa.test/scrape_appearances/0007_part_00.parquet
+
+Parquet File Dataset Name: 
+scrape_appearances
+
+Parquet File - Data Attributes: 
+['search_term', 'date', 'device', 'scrape_count']
+
+Parquet File - Data Schema: 
+search_term: string
+date: date32[day]
+device: string
+scrape_count: int32
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 2 - DATAFRAME VALIDATIONS *****
+
+-----------------------------------------------------------------------------------------------------
+Parquet File - DataFrame: 
+                            search_term        date   device  scrape_count
+0                   car comparison tool  2022-05-13  desktop             3
+1                    car computer games  2022-05-13  desktop             1
+2                     car covers direct  2022-05-13  desktop             8
+3                    car crate for dogs  2022-05-13  desktop             2
+4                      car dealer local  2022-05-13  desktop             2
+...                                 ...         ...      ...           ...
+357995               master online free  2022-05-15  desktop             2
+357996         masters degrees business  2022-05-15  desktop             2
+357997  masters in information security  2022-05-15  desktop             8
+357998               mat for front door  2022-05-15  desktop             2
+357999                     mat for yoga  2022-05-15  desktop             2
+
+[358000 rows x 4 columns]
+
+Total Number of Data Attributes in the Parquet DataFrame: 
+4
+
+Total Number of Data Instances in the Parquet DataFrame: 
+358000
+
+Data Types of the Attributes in the Parquet DataFrame: 
+search_term     object
+date            object
+device          object
+scrape_count     int32
+dtype: object
+
+Descriptive Statistics of the Parquet DataFrame: 
+        scrape_count
+count  358000.000000
+mean        3.230813
+std         2.885697
+min         1.000000
+25%         2.000000
+50%         2.000000
+75%         3.000000
+max        25.000000
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 3 - NULL (NaN and None) VALUES CHECKS AND VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+There are no Null Values found for the Attribute 'search_term' in the Parquet File '0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+Attribute 'date':
+There are no Null Values found for the Attribute 'date' in the Parquet File '0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+Attribute 'device':
+There are no Null Values found for the Attribute 'device' in the Parquet File '0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+Attribute 'scrape_count':
+There are no Null Values found for the Attribute 'scrape_count' in the Parquet File '0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 4 - NON-ASCII CHARACTERS CHECKS AND VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+Total Number of Non-ASCII String Values: 191
+
+Below are the Filtered Data Instances of the 191 Non-ASCII String Values found for the Attribute 'search_term' in the Parquet File '0007_part_00.parquet'.
+
+                              search_term        date   device  scrape_count
+967                       erva'nın butiği  2022-05-13  desktop             1
+1439               compañías aseguradoras  2022-05-14   mobile             8
+1983                          espaço kids  2022-05-14   mobile             1
+2826                     concept sécurité  2022-05-14  desktop             1
+3955       como hacer crecer las pestañas  2022-05-13   mobile             1
+...                                   ...         ...      ...           ...
+349376                      women’s suits  2022-05-15  desktop             3
+351471                    liquidación hoy  2022-05-15  desktop             1
+354552                            marsèll  2022-05-15  desktop             3
+354980  oficina de state farm cerca de mí  2022-05-15  desktop             8
+357819      lip & cheek bloom – # 01 rose  2022-05-15  desktop             1
+
+[191 rows x 4 columns]
+
+Attribute 'device':
+There are no Non-ASCII String Values found for the Attribute 'device' in the Parquet File '0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 5 - UNIQUE PRIMARY KEY COMBINATION - DUPLICATE DATA CHECKS AND VALIDATIONS *****
+---------------------------------------------------------------------------------------------------------------------------------
+There are no Duplicate Data Instances found for the Combination of the Unique Primary Key Data Attributes '['search_term', 'date', 'device']' in the Parquet File'0007_part_00.parquet'.
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 6 - DATE ATTRIBUTE'S ACCEPTABLE DATE FORMAT - VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+The Date '2022-05-13' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0007_part_00.parquet'. 
+
+
+
+The Date '2022-05-14' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0007_part_00.parquet'. 
+
+
+
+The Date '2022-05-15' is in the Expected Format as '%Y-%m-%d' in the Parquet File '0007_part_00.parquet'. 
+
+
+
+List of Dates with the Valid Format:
+['2022-05-13', '2022-05-14', '2022-05-15']
+
+List of Dates with the Invalid Format:
+[]
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 7 - UNIQUE VALUES SUPPORTED BY THE DEVICE DATA ATTRIBUTE - VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------
+There are no New UnSupported Device Values found for the Attribute 'device' in the Parquet File '0007_part_00.parquet'.
+
+
+Total Number of Existing Supported Device Values: 2
+
+
+List of Existing Supported Device Values: ['desktop', 'mobile']
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 8 - DEVIATIONS IN THE MAXIMUM ALLOWABLE CHARACTERS LENGTH OF THE GIVEN DATA ATTRIBUTE - VALIDATIONS *****
+--------------------------------------------------------------------------------------------------------------------------------------------
+Attribute 'search_term':
+There are no Data Instances for the Data Attribute 'search_term' that Deviated the Maximum Allowable Characters Length of 400 in the Parquet File '0007_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+***** DATA QUALITY TEST 9 - DEVIATIONS IN THE MINIMUM ALLOWABLE INTEGER COUNT OF THE SCRAPE COUNT DATA ATTRIBUTE - VALIDATIONS *****
+-----------------------------------------------------------------------------------------------------------------------------------------------
+There are no Data Instances for the Data Attribute 'scrape_count' that Deviated the Minimum Allowable Scrape Count of 1 in the Parquet File '0007_part_00.parquet'. 
+
+Empty DataFrame
+Columns: [search_term, date, device, scrape_count]
+Index: []
+
+-----------------------------------------------------------------------------------------------------
+

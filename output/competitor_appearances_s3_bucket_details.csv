@@ -1,0 +1,47 @@
+Competitor Appearances S3 Bucket Details
+
+S3 Bucket Fully Qualified URI: s3://adthena.data.qa.test/competitor_appearances
+
+Total Number of Files in the Bucket: 40
+
+List of Parquet Files:
+0000_part_00.parquet
+0000_part_01.parquet
+0001_part_00.parquet
+0001_part_01.parquet
+0002_part_00.parquet
+0002_part_01.parquet
+0003_part_00.parquet
+0003_part_01.parquet
+0004_part_00.parquet
+0004_part_01.parquet
+0005_part_00.parquet
+0005_part_01.parquet
+0006_part_00.parquet
+0006_part_01.parquet
+0007_part_00.parquet
+0007_part_01.parquet
+0008_part_00.parquet
+0008_part_01.parquet
+0009_part_00.parquet
+0009_part_01.parquet
+0010_part_00.parquet
+0010_part_01.parquet
+0011_part_00.parquet
+0011_part_01.parquet
+0012_part_00.parquet
+0012_part_01.parquet
+0013_part_00.parquet
+0013_part_01.parquet
+0014_part_00.parquet
+0014_part_01.parquet
+0015_part_00.parquet
+0015_part_01.parquet
+0016_part_00.parquet
+0016_part_01.parquet
+0017_part_00.parquet
+0017_part_01.parquet
+0018_part_00.parquet
+0018_part_01.parquet
+0019_part_00.parquet
+0019_part_01.parquet
